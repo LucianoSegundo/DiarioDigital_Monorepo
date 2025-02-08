@@ -1,0 +1,42 @@
+<main>
+
+    <section class="telaLogin">
+
+        <section class="info">
+            <h3>Faça Login</h3>
+
+            <p>
+                Se esqueceu sua
+                senha? <a class="direcionador" (click)="telaRecu()"> clique aqui</a>
+                "mas eu não tenho conta... faça a sua <a class="direcionador" (click)="telaHome()"> agora </a> mesmo.
+        </section>
+        <section class="se-form">
+
+
+            <form [formGroup]="formulario" class="form">
+                @if (aguardando) {
+                <p class="aguardando"> Aguardando resposta da solicitação</p>
+                }
+                @if (falha) {
+                <p class="alerta"> Login não permitido</p>
+                }
+
+                <p [className]="CampoNome">Usuario não deve ser nulo</p>
+                <fieldset [className]="CampoNome">
+                    <img src="usuario.png" alt="">
+                    <input type="text" placeholder="Nome" (blur)="ConferirCampoLogin('nome')" formControlName="nome" />
+                </fieldset>
+
+                <p [className]="campoSenha">Nova senha não deve ser nula</p>
+                <fieldset [className]="campoSenha">
+                    <img src="senha.png" alt="">
+                    <input type="password" placeholder="Senha" (blur)="ConferirCampoLogin('senha')"
+                        formControlName="senha" />
+                </fieldset>
+
+            </form>
+            <app-button mensagem="Logar" (submit)="logar()" [desabilitado]="!formulario.valid"></app-button>
+
+        </section>
+    </section>
+</main>

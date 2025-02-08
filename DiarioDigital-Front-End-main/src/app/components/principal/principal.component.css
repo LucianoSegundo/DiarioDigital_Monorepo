@@ -1,0 +1,275 @@
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 93.5vh;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.acesso {
+  display: flex;
+}
+.acesso p {
+  margin-top: 2vh;
+  min-width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.acesso fieldset {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  background-color: white;
+  input {
+    border-radius: 8px;
+  }
+}
+
+.acesso fieldset input {
+  padding: 5px;
+  border: none;
+}
+
+.acesso fieldset img {
+  margin: 0 5px;
+  width: 15px;
+  height: 15px;
+}
+
+.interacao app-button {
+  margin-top: 3vh;
+}
+
+@media (min-width: 1080px) {
+  main {
+    flex-direction: row;
+  }
+  .acesso {
+    flex-direction: column;
+    justify-content: start;
+    padding-top: 2vh;
+
+    width: 22vw;
+    background: linear-gradient(
+      135deg,
+      var(--cPrim),
+      var(--cPrim),
+      var(--cSegun),
+      var(--cSegun),
+      var(--cSegun)
+    );
+  }
+  .interacao {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: start;
+    align-items: center;
+    height: 40%;
+
+    p {
+      font-size: 2.3vh;
+    }
+  }
+
+  .acesso fieldset {
+    width: 90%;
+    margin: 5% 5%;
+    font-size: 2.5vh;
+    border-radius: 1.5vh;
+
+    input {
+      font-size: 2.5vh;
+      width: 95%;
+      height: 6.2vh;
+      border-radius: 1.5vh;
+
+      border: none;
+    }
+  }
+
+  .conteudo {
+    width: 78vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  section.listas {
+    min-width: 70%;
+    min-height: 75%;
+    border-radius: 3vh;
+    background: linear-gradient(
+      135deg,
+      var(--cPrim),
+      var(--cSegun),
+      var(--cSegun),
+      var(--cSegun),
+      var(--cSegun)
+    );
+    padding: 2.5%;
+  }
+
+  table {
+    width: 100%;
+    font-size: 2.5vh;
+  }
+  .listinha {
+    width: 100%;
+    background-color: rgb(250, 249, 253);
+    height: 88%;
+  }
+  .cabeçalho {
+    height: 5.8vh;
+  }
+  .linha {
+    height: 5.8vh;
+    font-size: 1.8vh;
+  }
+
+  .linha:hover {
+    font-weight: 600;
+  }
+  .linha:hover {
+    background-color: rgb(238, 233, 233);
+  }
+
+  .mat-column-icone {
+    width: 10%;
+    padding: 0 2%;
+  }
+
+  .mat-column-icone img {
+    width: 3.5vh;
+  }
+  .mat-column-titulo {
+    width: 78%;
+    padding: 0;
+  }
+  .mat-column-capitulos {
+    width: 12%;
+    padding: 0 2%;
+  }
+}
+
+@media (max-width: 1080px) {
+  main {
+    flex-direction: column-reverse;
+    width: 98vw;
+    gap: 1vh;
+  }
+  .interacao {
+    display: flex;
+
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: end;
+    width: 100%;
+    height: 100%;
+  }
+  .interacao app-button {
+    margin-left: 3%;
+  }
+  .acesso {
+    flex-direction: column;
+    justify-content: end;
+    height: 18vh;
+    &:first-child {
+      margin-top: 10px;
+    }
+  }
+  .acesso form {
+    width: 250px;
+    height: auto;
+  }
+  .acesso form p.alerta {
+    margin-top: 10px;
+  }
+  .acesso fieldset {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 20px;
+
+    input {
+      width: 100%;
+      height: 40px;
+      border: none;
+    }
+  }
+  .conteudo {
+    width: 100vw;
+    height: 68vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .listas {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(250, 249, 253);
+
+    table {
+      width: 100%;
+
+      background: none;
+    }
+    table tr {
+      font-weight: 900;
+    }
+    .listinha {
+      width: 100%;
+      height: 92%;
+    }
+    .linha {
+      height: 48px;
+    }
+    .mat-mdc-cell {
+      border-bottom-color: rgb(29, 28, 28);
+      border-width: 1px;
+      font-size: 9px;
+    }
+    .mat-mdc-header-cell {
+      border-bottom-color: white;
+    }
+
+    .mat-column-icone {
+      width: 8%;
+      padding: 0 8px;
+    }
+    .mat-column-titulo {
+      width: 70%;
+      text-wrap: wrap;
+      padding: 0;
+    }
+    .mat-column-capitulos {
+      width: 11%;
+      padding: 0;
+      padding-left: 4px;
+    }
+
+    h3 {
+      color: white;
+      font-size: 40px;
+      margin-top: 2%;
+    }
+  }
+
+  .botoes {
+    margin-top: 8%;
+    width: 30%;
+    gap: 4%;
+
+    button {
+      padding: 6% 7%;
+      font-size: 160%;
+    }
+
+    p {
+      padding: 6% 0;
+    }
+  }
+}

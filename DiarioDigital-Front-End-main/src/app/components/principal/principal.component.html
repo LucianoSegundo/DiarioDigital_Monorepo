@@ -1,0 +1,56 @@
+<main>
+    <section class="acesso">
+        <section class="interacao">
+            @if (criarClique) { <app-button mensagem="Criar Livro" classe="blanco"
+                (submit)="criarClique = !criarClique"></app-button> }
+            @else{
+            <app-button mensagem="Salvar Livro" classe="blanco" (submit)="CriarLivro()"
+                [desabilitado]="!formulario.valid"></app-button>
+            <form [formGroup]="formulario">
+                @if (aguardandoCriacao) {
+                <p class="aguardando"> Aguardando resposta da solicitação</p>
+                }
+                @if (sucessoCriacao) {
+                <p class="sucesso"> livro criado com sucesso</p>
+                }
+                @if (falhaCriacao) {
+                <p class="alerta"> {{mensagemErro}}</p>
+                }
+                <fieldset [className]="campoTitulo">
+                    <img src="livro.png" alt="icone do livro">
+                    <input type="text" placeholder="Titulo" maxlength="61" formControlName="titulo" />
+                </fieldset>
+            </form>
+            }
+        </section>
+
+    </section>
+    <section class="conteudo">
+        <section class="listas">
+            <div class="listinha">
+                <table mat-table [dataSource]="baseDados">
+
+                    <ng-container matColumnDef="icone">
+                        <th mat-header-cell *matHeaderCellDef></th>
+                        <td mat-cell *matCellDef=""><img src="livro.png" alt="icone do livro"></td>
+                    </ng-container>
+                    <ng-container matColumnDef="titulo">
+                        <th mat-header-cell *matHeaderCellDef>Título</th>
+                        <td mat-cell *matCellDef="let element">{{element.titulo}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="capitulos">
+                        <th mat-header-cell *matHeaderCellDef>N. Cap</th>
+                        <td mat-cell *matCellDef="let element">{{element.numeroCapitulos}}</td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="colunas" class="cabeçalho"></tr>
+                    <tr mat-row *matRowDef="let row; columns: colunas;let element;" (click)="acessarLivro(element.id)"
+                        class="linha"></tr>
+
+                </table>
+            </div>
+            <mat-paginator [length]="tamanho" [pageSize]="pageSize" [hidePageSize]="true" (page)="paginar($event)"
+                [showFirstLastButtons]="true" aria-label="seletorPagina"></mat-paginator>
+        </section>
+    </section>
+</main>

@@ -1,0 +1,50 @@
+<main>
+
+    <section class="telaRecu">
+
+        <section class="info">
+            <h3>Recupere a sua senha</h3>
+
+            <p>
+                Ou acabou de lembrar da sua senha?
+                senha? <a class="direcionador" (click)="telaLogin()"> clique aqui</a>
+            </p>
+        </section>
+        <section class="se-form">
+
+
+            <form [formGroup]="formulario" class="form">
+                @if (aguardando) {
+                <p class="aguardando"> Aguardando resposta da solicitação</p>
+                }
+                @if (falha) {
+                <p class="alerta"> Recuperação de senha não permitido</p>
+                }
+
+                <p [className]="campoNome">Usuario não deve ser nulo</p>
+                <fieldset [className]="campoNome">
+                    <img src="usuario.png" alt="">
+                    <input type="text" placeholder="Nome" (blur)="ConferirCampoRecu('nome')" formControlName="nome" />
+                </fieldset>
+
+                <p [className]="campoPalavra">Senha não deve ser nula</p>
+                <fieldset [className]="campoPalavra">
+                    <img src="usuario.png" alt="">
+                    <input type="password" placeholder="Palavra de Segurança"
+                        (blur)="ConferirCampoRecu('palavraSeguranca')" formControlName="palavraSeguranca" />
+                </fieldset>
+
+                <p [className]="campoSenha">Nova senha não deve ser nula</p>
+                <fieldset [className]="campoSenha">
+                    <img src="senha.png" alt="">
+                    <input type="password" placeholder="Nova senha" (blur)="ConferirCampoRecu('novaSenha')"
+                        formControlName="novaSenha" />
+                </fieldset>
+
+            </form>
+            <app-button classe="blanco" mensagem="Recuperar Senha" (submit)="recuperar()"
+                [desabilitado]="!formulario.valid"></app-button>
+
+        </section>
+    </section>
+</main>

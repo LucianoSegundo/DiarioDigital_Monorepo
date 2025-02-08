@@ -1,0 +1,77 @@
+<main>
+    <section class="apresentação">
+        <h1>
+            Escreva tudo aquilo que deseja sem ocupar espaço no seu dispositivo.
+        </h1>
+        <img src="imagem ilustrativa.jpg" alt="" width="400px" height="250px" />
+    </section>
+    <section class="clamaris">
+        <h2>Cansado <br>
+            de gastar <br>
+            dinheiro?</h2>
+        <p>Crie agora mesmo a sua conta 100% gratuita, e comece a escrever e não
+            se preocupe mais com o custo do papel e da caneta.</p>
+    </section>
+    <section class="se-form">
+        <h3>
+            Cadastre-se
+            <br> agora mesmo <br>
+            ou <a (click)="redirecionar();" class="direcionador">clique aqui</a>
+            <br> se já tiver conta
+        </h3>
+        <form class="form" id="formulario" [formGroup]="formulario">
+
+            @if(erroForm == true){
+            <p class="alerta">{{mensagemErro}}</p>
+            }
+
+            @if(suceesoform == true){
+            <p class="sucesso">Cadastro realizado com sucesso</p>
+            }
+
+            @if(aguardando == true){
+            <p class="aguardando"> Aguardando conclusão do cadastro</p>
+            }
+
+            <p [className]="campoNome">Nome deve conter no minimo 4 letras</p>
+            <fieldset [className]="campoNome">
+                <img src="usuario.png" alt="">
+                <input type="text" placeholder="Nome" (blur)="ConferirCampoHome('nome')" formControlName="nome" />
+            </fieldset>
+
+            <p [className]="campoIdade">idade não deve ser inferior a 18 anos</p>
+            <fieldset [className]="campoIdade">
+                <img src="usuario.png" alt="">
+                <input type="number" placeholder="Idade" (blur)="ConferirCampoHome('idade')" formControlName="idade" />
+            </fieldset>
+
+            <p [className]="campoPalavra">Palavra de segurança deve conter no minimo 4 letras</p>
+            <fieldset [className]="campoPalavra">
+                <img src="usuario.png" alt="">
+                <input type="text" placeholder="palavra de Segurança" (blur)="ConferirCampoHome('palavraSegu')"
+                    formControlName="palavraSegu" />
+            </fieldset>
+
+            <p [className]="campoSenha">Senha deve conter no minimo 4 letras</p>
+
+
+            <fieldset [className]="campoSenha">
+                <img src="senha.png" alt="">
+                <input type="password" placeholder="Senha" (blur)="ConferirCampoHome('senha')"
+                    formControlName="senha" />
+            </fieldset>
+
+            <p [className]="campoConfSenha">Senhas devem ser iguais</p>
+
+
+            <fieldset [className]="campoConfSenha">
+                <img src="senha.png" alt="">
+                <input type="password" placeholder="Confirmar senha" (blur)="ConferirCampoHome('confsenha')"
+                    formControlName="confsenha" />
+            </fieldset>
+
+            <app-button mensagem="cadastrar" classe="blanco" (submit)="Cadastrar()"
+                [desabilitado]="!formulario.valid"></app-button>
+        </form>
+    </section>
+</main>

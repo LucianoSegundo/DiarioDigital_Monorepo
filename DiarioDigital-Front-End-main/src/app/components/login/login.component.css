@@ -1,0 +1,164 @@
+main {
+  width: 100vw;
+  height: 93.5vh;
+}
+
+fieldset {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  background-color: white;
+}
+
+fieldset input {
+  padding: 5px;
+  border: none;
+}
+
+fieldset img {
+  margin: 0 5px;
+  width: 15px;
+  height: 15px;
+}
+
+.se-form {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+app-button {
+  margin-bottom: 4vh;
+}
+
+@media (max-width: 1080px) {
+  .telaLogin {
+    background: linear-gradient(180deg, var(--cSegun), var(--cPrim));
+    margin-top: 8vh;
+    padding-bottom: 8vh;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4vh 0 1vh;
+    gap: 4vh;
+    color: white;
+
+    h3 {
+      font-size: 40px;
+    }
+  }
+
+  .se-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+    font-weight: 600;
+    width: 100%;
+    min-height: 40vh;
+    background: rgb(249, 255, 252);
+    border-radius: 10px;
+    padding-bottom: 6vh;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    min-height: 20vh;
+    margin: 6vh 0;
+
+    fieldset {
+      width: 100%;
+      font-size: 20px;
+
+      input {
+        width: 95%;
+        height: 40px;
+        border: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 1080px) {
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .telaLogin {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    color: var(--branco);
+    background: -webkit-linear-gradient(180deg, var(--cPrim), var(--cSegun));
+    width: 70vw;
+    min-height: 70vh;
+    border-radius: 1.5vh;
+    font-weight: 600;
+
+    h3 {
+      font-size: 9vh;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 25vh;
+      width: 50%;
+      height: 70vh;
+      padding: 2vh;
+      p {
+        font-size: 3.5vh;
+        width: 18vw;
+      }
+    }
+
+    .se-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 1.5vh;
+      width: 50%;
+      min-height: 70vh;
+      padding: 2vh;
+      background: var(--branco);
+    }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    margin: 8vh 0;
+    min-width: 95%;
+
+    p {
+      font-size: 2.3vh;
+    }
+    fieldset {
+      width: 100%;
+      input {
+        padding: 0.9vh;
+        border-radius: 2vh;
+        font-size: 2.3vh;
+        height: 6.2vh;
+        width: 100%;
+      }
+    }
+    fieldset img {
+      margin: 0 0.9vh;
+      width: 2.5vh;
+      height: 2.5vh;
+    }
+  }
+}

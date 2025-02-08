@@ -1,0 +1,26 @@
+<main>
+    <section class="sessaoTabela">
+        <table mat-table [dataSource]="baseDados">
+            <ng-container matColumnDef="icone">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef=""> <img src="capitulo.png"></td>
+            </ng-container>
+            <ng-container matColumnDef="titulo">
+                <th mat-header-cell *matHeaderCellDef>Título do Capitulo</th>
+                <td mat-cell *matCellDef="let element">{{element.titulo}}</td>
+            </ng-container>
+            <ng-container matColumnDef="nCap">
+                <th mat-header-cell *matHeaderCellDef>N.Cap</th>
+                <td mat-cell *matCellDef="let element">{{element.numeroCapitulo}}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="colunas" class="linhas"></tr>
+            <tr mat-row *matRowDef="let row; columns: colunas; let element;" (click)="acessarCapitulo(element.id)"
+                class="linhas">
+            </tr>
+        </table>
+
+    </section>
+    <mat-paginator showFirstLastButtons="true" hidePageSize="true" pageSize="1" [length]="totalPaginas"
+        (page)="paginador($event)">sssss</mat-paginator>
+</main>

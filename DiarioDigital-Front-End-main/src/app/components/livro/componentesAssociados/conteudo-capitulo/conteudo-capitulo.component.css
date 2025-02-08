@@ -1,0 +1,40 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+
+  gap: 4vh;
+  width: 100%;
+  height: 100%;
+}
+main h1 {
+  width: 82%;
+  height: 10%;
+
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: center;
+}
+main section {
+  display: flex;
+  flex-direction: column;
+
+  height: 80%;
+  width: 100%;
+}
+main textarea {
+  resize: none;
+  border: none;
+  background: none;
+  cursor: default;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::content {
+    padding: 0 2vw;
+  }
+  height: 90%;
+  width: 95%;
+}

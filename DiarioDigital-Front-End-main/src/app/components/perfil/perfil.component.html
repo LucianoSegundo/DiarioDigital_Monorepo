@@ -1,0 +1,24 @@
+<main>
+    <section>
+
+
+        <form [formGroup]="formulario">
+            <h1>Excluir Conta</h1>
+            <fieldset class="separacao">
+                <fieldset class="campo">
+                    <img src="senha.png" alt="">
+                    <input type="password" placeholder="Digite sua senha" formControlName="senha"
+                        (blur)="validarCampo()">
+                </fieldset>
+                <fieldset [class]="'campo '+ classe">
+                    <img src="senha.png" alt="">
+                    <input type="password" placeholder="Confirme sua senha" (input)="validarCampo()"
+                        formControlName="confsenha">
+                </fieldset>
+            </fieldset>
+
+            <app-button mensagem="excluir livro" [desabilitado]="!this.formulario.valid"
+                (submit)="excluirUsuario()"></app-button>
+        </form>
+    </section>
+</main>

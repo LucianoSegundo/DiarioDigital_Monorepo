@@ -1,0 +1,83 @@
+main {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+}
+main form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: var(--branco);
+
+  width: 70%;
+  height: 83%;
+  gap: 6%;
+  padding: 2%;
+  border-radius: 3%;
+}
+main fieldset {
+  display: flex;
+  align-items: center;
+  border: solid 1px;
+
+  gap: 2%;
+  width: 90%;
+  padding: 1%;
+  border-radius: 4%;
+}
+main fieldset input {
+  border: none;
+
+  height: 5.6vh;
+  width: 95%;
+}
+
+main fieldset textarea {
+  border: none;
+  &:focus {
+    outline: none;
+  }
+  resize: none;
+
+  width: 100%;
+  height: 47vh;
+  &::content {
+    padding: 2%;
+  }
+}
+main section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+
+  width: 100%;
+  p {
+    width: 50%;
+  }
+}
+.erro {
+  &::placeholder {
+    color: tomato;
+  }
+  border: tomato;
+  color: tomato;
+}
+
+p.semFundo {
+  background: none;
+}
+
+@media (max-width: 1080px) {
+  main form {
+    width: 100%;
+    height: 83%;
+    gap: 3%;
+    padding: 2%;
+  }
+}

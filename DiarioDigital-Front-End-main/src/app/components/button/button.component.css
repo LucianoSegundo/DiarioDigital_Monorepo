@@ -1,0 +1,57 @@
+button {
+  height: 5vh;
+  padding: 0 40px;
+  min-width: 15vw;
+  border-radius: 20px;
+  background: var(--cSegun);
+  border: none;
+
+  &:hover {
+    border: 1px rgb(2, 2, 2) solid;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+  }
+}
+
+.blanco {
+  background: white;
+}
+
+.bicone {
+  height: 4vh;
+  min-width: 40px;
+  padding: 0 10px;
+  background: none;
+
+  &:hover {
+    border: none;
+    background: var(--branco);
+  }
+  img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (min-width: 1080px) {
+  button {
+    padding: 1vh;
+    height: 6vh;
+    min-width: 10vw;
+    font-size: 2vh;
+    border-radius: 3.1vh;
+  }
+  .bicone {
+    background: none;
+    height: 6.5vh;
+    padding: 1vh 2vh;
+    border-radius: 2vh;
+
+    img {
+      width: 3.1vh;
+      height: 3.1vh;
+    }
+  }
+}

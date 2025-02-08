@@ -1,0 +1,92 @@
+* {
+  margin: 0px;
+  padding: 0px;
+
+  --cPrim: rgb(49, 231, 192);
+  --cSegun: rgb(101, 255, 178);
+  --PrimCon:rgb(87, 209, 183);
+  --branco: rgb(252, 252, 252);
+
+  --texto: rgb(39, 37, 37);
+  --texto2: rgb(63, 61, 61);
+
+  p.borVer {
+    margin-top: 3vh;
+    margin-bottom: 0.4vh;
+    color: tomato;
+  }
+  p.borverde {
+    margin-top: 3vh;
+    margin-bottom: 0.4vh;
+    color: white;
+    opacity: 0%;
+  }
+  p.borbranco {
+    margin-top: 3vh;
+    margin-bottom: 0.4vh;
+    color: black;
+    opacity: 0%;
+  }
+  fieldset.borVer {
+    border: 2px solid tomato;
+    margin-top: 0;
+    input::placeholder {
+      color: tomato;
+    }
+  }
+
+  fieldset.borverde {
+    border: none;
+  }
+  fieldset.borbranco {
+    border: 1px solid black;
+  }
+
+  .alerta {
+    background-color: rgb(252, 75, 75);
+    display: block;
+    padding: 20px 0;
+    width: 99%;
+    border-radius: 5px;
+    text-align: center;
+
+  }
+  .sucesso {
+    background-color: rgb(75, 202, 252);
+    display: block;
+    padding: 15px 0;
+    width: 99%;
+    border-radius: 5px;
+    text-align: center;
+  }
+  .aguardando {
+    background-color: rgb(252, 240, 75);
+    display: block;
+    padding: 15px 0;
+    width: 99%;
+    border-radius: 5px;
+    text-align: center;
+    color: rgb(44, 41, 41);
+  }
+
+  .direcionador {
+    color: rgb(26, 86, 252);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .direcionador:hover {
+    color: darkblue;
+  }
+
+  input:focus {
+    border: none;
+    outline: none;
+  }
+}
+body {
+  background: #e8e8e8;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

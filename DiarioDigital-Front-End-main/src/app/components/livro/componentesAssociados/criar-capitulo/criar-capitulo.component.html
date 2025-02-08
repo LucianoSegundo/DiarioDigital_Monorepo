@@ -1,0 +1,32 @@
+<main>
+    <form class="formulario" [formGroup]="formulario">
+        <fieldset [class]="tituloClass">
+            <img src="escrever.png">
+            <input type="text" placeholder="Título" maxlength="56" [class]="tituloClass" formControlName="titulo"
+                (input)="validarCampo('titulo')">
+        </fieldset>
+        <fieldset [class]="ConteudoClass">
+            <textarea placeholder="Deve conter no minimo 50 caracteres." formControlName="Conteudo"
+                (input)="validarCampo('Conteudo')" [class]="ConteudoClass" [maxlength]="tamanhoConteudo"
+                minLength="50"></textarea>
+        </fieldset>
+
+        <section>
+            <app-button mensagem="Criar Capitulo" [desabilitado]="!formulario.valid"
+                (submit)="criarCapitulo()"></app-button>
+
+            @if (aguardando) {
+            <p class="aguardando"> Aguardando resposta da solicitação</p>
+            }
+            @else if (sucesso) {
+            <p class="sucesso"> livro criado com sucesso</p>
+            }
+            @else if (falha) {
+            <p class="alerta"> {{mensagemERRo}}</p>
+            }
+            @else {
+            <p class="alerta semFundo"> {{formulario.value.Conteudo?.length}} / {{tamanhoConteudo}}</p>
+            }
+        </section>
+    </form>
+</main>
